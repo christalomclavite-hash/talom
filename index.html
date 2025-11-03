@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teachers Appointment System</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-left">
+      <div class="mini-logo" aria-hidden="true">
+        <span class="mini-logo-text">STI</span>
+        
+
+
+      </div>
+      <div class="title">
+        <div class="title-main">TEACHERS</div>
+        <div class="title-sub">APPOINTMENT SYSTEM</div>
+      </div>
+    </div>
+
+    <nav class="top-nav">
+      <a href="home.php">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="support.html">SUPPORT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <!-- PROFILE: header profile container and dropdown
+         Uses <details> for accessible dropdown functionality
+         
+         Components:
+         .profile          -> Container in header, handles positioning
+         .profile-menu     -> <details> element with dropdown behavior
+         .profile-summary  -> Visible trigger (avatar + name)
+         .profile-badge    -> Visible avatar/icon with background
+         .profile-name     -> Name and role/course display
+         .profile-dropdown -> Dropdown panel with white background
+         .profile-info     -> User details section (name, email)
+         .profile-links    -> Action links section
+         .profile-link     -> Individual action link styling
+    -->
+    <div class="profile">
+      <details class="profile-menu">
+        <summary class="profile-summary">
+          <div class="profile-badge">
+            <i class="fa-regular fa-circle-user"></i>
+          </div>
+          <div class="profile-name">
+            <div class="name">STUDENT NAME</div>
+            <div class="role">BSIT Student</div>
+          </div>
+        </summary>
+
+        <div class="profile-dropdown">
+          <div class="profile-info">
+            <div class="full-name">STUDENT NAME</div>
+            <div class="email">student@example.local</div>
+            <div class="id">ID: STI-2025-1234</div>
+          </div>
+
+          <nav class="profile-links">
+            <a href="profile/index.html" class="profile-link">
+              <i class="fa-regular fa-user"></i>
+              View Profile
+            </a>
+            <a href="settings.html" class="profile-link">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+            <a href="#" id="logout-link" class="profile-link">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Logout
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </header>
+  <div class="page-grid">
+    <aside class="sidebar">
+  <a class="side-btn" href="home.php"><i class="fa-solid fa-house"></i> HOME</a>
+  <a class="side-btn" href="students.php"><i class="fa-solid fa-user-group"></i> STUDENTS</a>
+  <a class="side-btn" href="teachers.php"><i class="fa-solid fa-user-tie"></i> TEACHERS</a>
+  <a class="side-btn" href="parents.php"><i class="fa-solid fa-users"></i> PARENTS</a>
+  <a class="side-btn" href="departments.php"><i class="fa-solid fa-graduation-cap"></i> DEPARTMENT</a>
+  <a class="side-btn" href="subjects.php"><i class="fa-solid fa-file-lines"></i> SUBJECT</a>
+
+      <div class="fav-note">
+        <div class="fav-header"><i class="fa-regular fa-clock"></i> FAVORITE NOTE</div>
+        <textarea placeholder="Write a favorite note..."></textarea>
+      </div>
+
+      <!-- Admin area: details-based menu for admin utilities -->
+      <div class="admin-area">
+        <details class="admin-menu">
+          <summary class="admin-summary" aria-label="Open admin menu">
+            <div class="admin-badge"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="admin-title">
+              <div class="admin-main">ADMIN</div>
+              <div class="admin-sub">OPTION • SETTINGS</div>
+            </div>
+          </summary>
+
+          <div class="admin-dropdown">
+            <!-- Details-based Options inside the admin dropdown -->
+            <details class="admin-settings">
+              <summary>Options &amp; Settings</summary>
+              <div class="admin-settings-body">
+                <a href="admin/preferences.html" class="admin-link"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                <a href="admin/theme.html" class="admin-link"><i class="fa-solid fa-paint-brush"></i> Theme</a>
+                <label class="admin-toggle">
+                  <input type="checkbox" id="compactMode">
+                  <span>Compact Sidebar</span>
+                </label>
+              </div>
+            </details>
+            <nav class="admin-links">
+              <a href="admin/panel.html" class="admin-link"><i class="fa-solid fa-chart-simple"></i> Dashboard</a>
+              <a href="admin/users.html" class="admin-link"><i class="fa-solid fa-users"></i> User Management</a>
+              <a href="admin/settings.html" class="admin-link"><i class="fa-solid fa-gear"></i> Settings</a>
+              <a href="#" id="admin-logout" class="admin-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </nav>
+          </div>
+        </details>
+      </div>
+    </aside>
+    <main class="main-area">
+      <div class="dashboard-row">
+        <div class="dash-pill"><strong>DASHBOARD</strong></div>
+        <div class="search-right">
+          <input type="text" placeholder="Search...">
+          <i class="fa-regular fa-bell"></i>
+          <i class="fa-regular fa-envelope"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+
+        </div>
+      </div>
+      <section class="banner">
+        <div class="banner-bg-grid"></div>
+
+        <div class="banner-content">
+          <div class="smile-arc">
+            <div class="arc arc-yellow"></div>
+            <div class="arc arc-orange"></div>
+            <div class="arc arc-blue"></div>
+            <div class="smile left">😊</div>
+            <div class="smile right">😊</div>
+          </div>
+
+          <div class="big-plate">
+            <div class="plate-top">WELCOME TO</div>
+            <div class="plate-main">STI COLLEGE</div>
+          </div>
+
+          <div class="students-mini">
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+            <div class="mini-avatar"></div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Course Section
+           Shows current course details and available subjects
+           .course-row   -> Course and subject header
+           .course-info  -> Detailed course information
+           .subject-list -> List of enrolled subjects
+      -->
+      <div class="course-row">
+        <div class="course-label">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>CURRENT COURSE</span>
+        </div>
+        <div class="subject-pill">
+          <i class="fa-solid fa-book"></i>
+          <span>SUBJECTS</span>
+        </div>
+      </div>
+
+      <!-- Dashboard Cards
+           Three column layout with key information cards
+           .three-cards -> Grid container for cards
+           .card       -> Individual card with header and content
+           .card-stats -> Statistics/metrics display
+      -->
+      <div class="three-cards">
+        <div class="card">
+          <div class="card-head">
+            <i class="fa-solid fa-users-rectangle"></i>
+            <span>CLASS GROUPS</span>
+          </div>
+          <div class="card-body">
+            <div class="card-stats">
+              <div class="stat-item">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Active Groups</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">32</span>
+                <span class="stat-label">Members</span>
+              </div>
+            </div>
+            <div class="group-list">
+              <div class="group-item">
+                <i class="fa-solid fa-users"></i>
+                <span class="group-name">BSIT-2A</span>
+                <span class="group-count">12 members</span>
+              </div>
+              <div class="group-item">
+                <i class="fa-solid fa-users"></i>
+                <span class="group-name">BSIT-2B</span>
+                <span class="group-count">10 members</span>
+              </div>
+              <div class="group-item">
+                <i class="fa-solid fa-users"></i>
+                <span class="group-name">BSIT-2C</span>
+                <span class="group-count">10 members</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>LATEST NEWS</span>
+          </div>
+          <div class="card-body">
+            <div class="news-list">
+              <div class="news-item">
+                <div class="news-date">Oct 28</div>
+                <div class="news-title">Midterm Exam Schedule Posted</div>
+                <div class="news-preview">Check the exam schedule for next week...</div>
+              </div>
+              <div class="news-item">
+                <div class="news-date">Oct 26</div>
+                <div class="news-title">Campus Technology Week</div>
+                <div class="news-preview">Join us for workshops and presentations...</div>
+              </div>
+              <div class="news-item">
+                <div class="news-date">Oct 25</div>
+                <div class="news-title">New Library Resources</div>
+                <div class="news-preview">Access new online learning materials...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>PROGRESS MASTERY</span>
+          </div>
+          <div class="card-body">
+            <div class="mastery-stats">
+              <div class="mastery-overview">
+                <div class="mastery-percent">85%</div>
+                <div class="mastery-label">Overall Progress</div>
+              </div>
+              <div class="mastery-subjects">
+                <div class="subject-progress">
+                  <span class="subject-name">Programming</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="subject-progress">
+                  <span class="subject-name">Database</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="subject-progress">
+                  <span class="subject-name">Networking</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside class="right-panel">
+      <div class="appointment-box">
+        <div class="appt-header">APPOINTMENT</div>
+        <div class="appt-body">
+          <button class="appt-btn" id="create-appt-btn">NEW APPOINTMENT</button>
+          <button class="appt-btn" id="accept-appt-btn">ACCEPT APPOINT (enter id)</button>
+          <div style="margin-top:8px;font-size:0.9rem;color:#666">Use the buttons to create an appointment or accept by id.</div>
+        </div>
+      </div>
+
+      <!-- Calendar Widget
+           Interactive calendar with date selection and mini calendar view
+           .calendar-box   -> Main container
+           .cal-header    -> Header with month navigation
+           .cal-controls  -> Month/year navigation buttons
+           .cal-body     -> Calendar grid and input
+           .date-input   -> Current date display/input
+           .mini-calendar -> Calendar grid view
+      -->
+      <div class="calendar-box">
+        <div class="cal-header">
+          <span>SELECT DATE</span>
+          <div class="cal-controls">
+            <button class="cal-nav-btn" id="prevMonth" aria-label="Previous month">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <span class="current-month">October 2025</span>
+            <button class="cal-nav-btn" id="nextMonth" aria-label="Next month">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="cal-body">
+          <div class="date-input">
+            <i class="fa-regular fa-calendar"></i>
+            <input type="text" value="10/28/2025" readonly aria-label="Selected date">
+          </div>
+          <div class="mini-calendar">
+            <div class="calendar-grid">
+              <div class="calendar-days">
+                <span>Su</span>
+                <span>Mo</span>
+                <span>Tu</span>
+                <span>We</span>
+                <span>Th</span>
+                <span>Fr</span>
+                <span>Sa</span>
+              </div>
+              <div class="calendar-dates" id="calendarDates">
+                <!-- Calendar dates will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-actions">
+        <a href="help.html" class="right-btn">HELP &amp; FEEDBACK</a>
+        <a href="updates.html" class="right-btn">APPLY FOR UPDATES</a>
+        <a href="student-matters.html" class="right-btn">STUDENT OF MATTERS</a>
+      </div>
+
+      <!-- Social Media Links
+           Uses semantic links with proper hover states and accessibility
+           .social-row -> Container for social links
+           .social-link -> Individual social media link with icon
+      -->
+      <div class="social-row">
+        <a href="https://twitter.com/sticollege" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Twitter">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="https://t.me/sticollege" class="social-link" target="_blank" rel="noopener" aria-label="Join our Telegram channel">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://maps.google.com/?q=STI+College" class="social-link" target="_blank" rel="noopener" aria-label="Find us on Google Maps">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+        <a href="https://facebook.com/sticollege" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+  <script src="calendar.js"></script>
+</body>
+</html>

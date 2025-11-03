@@ -1,0 +1,32 @@
+Quick Start Guide - Teachers Appointment System
+
+Local setup requirements:
+1. PHP 7.4+ with SQLite enabled, or
+2. Node.js (optional) — the repository includes a Node example server (server.js)
+
+Choose ONE of these methods to run the app:
+
+METHOD 1 - PHP built-in server (if PHP is installed)
+-------------------------------------------------
+Open PowerShell in this folder and run:
+php -S localhost:8000 router.php
+
+Then open in your browser:
+http://localhost:8000
+
+Default admin login:
+- Email: admin@sti.local
+- Password: adminpass
+
+TROUBLESHOOTING
+--------------
+Q: "php not found" or "node not found"
+A: Install PHP (7.4+) or Node.js and try again. The project can run with the PHP built-in server or the included Node example server.
+
+Q: White screen or errors in browser
+A: Check browser developer tools console (F12) for errors.
+
+Q: Database errors
+A: The SQLite DB is created automatically. If you get errors, delete `db/app.db` and let it recreate.
+
+Need help? See `README.md` for local run instructions.
